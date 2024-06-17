@@ -1,0 +1,20 @@
+management_zones:
+  - name: "Product A"
+    type: "k8s-workload"
+    namespace: "namespace-a"
+    envs:
+      - DEV
+      - UAT
+      - CLONE
+      - PREPROD
+      - PROD
+  - name: "Product B"
+    type: "k8s-workload"
+    namespace: "namespace-b"
+    envs:
+      - DEV
+      - UAT
+      - CLONE
+      - PREPROD
+      - PROD
+
