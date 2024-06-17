@@ -11,19 +11,6 @@ locals {
   ])
 }
 
-# Define multiple providers for each environment
-provider "dynatrace" {
-  alias     = "Non-Prod"
-  api_url   = "https://non-prod.dynatrace.com/api"
-  api_token = "non-prod-token"
-}
-
-provider "dynatrace" {
-  alias     = "Prod"
-  api_url   = "https://prod.dynatrace.com/api"
-  api_token = "prod-token"
-}
-
 resource "dynatrace_management_zone_v2" "mz" {
   for_each = { for mz in local.management_zones : "${mz.name}-${mz.env}" => mz }
 
